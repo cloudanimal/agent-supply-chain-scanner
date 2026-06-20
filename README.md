@@ -5,6 +5,8 @@ malicious instructions across the artifacts an AI agent trusts and auto-loads �
 **skills, MCP servers, hooks, memory/rule files, and prompts** — before they
 ever reach the model.
 
+**▶ Live demo (no install):** https://cloudanimal.github.io/agent-supply-chain-scanner/ — paste or drop a skill/MCP/prompt and scan it entirely in your browser.
+
 Agent skills, MCP servers, and plugins are an emerging software supply chain:
 third-party text and config that an agent will *execute on your behalf*. A
 malicious one doesn't need a memory-corruption bug — it just needs the agent to
@@ -135,6 +137,14 @@ python3 -m unittest discover -s tests -v
 
 Behavioral fixtures under `fixtures/` assert that a crafted malicious skill
 trips the expected rules and that a benign skill stays silent.
+
+## Browser playground
+
+[`docs/index.html`](docs/index.html) is a self-contained, client-side port of
+the rules engine (served at the live-demo link above via GitHub Pages → `/docs`).
+It runs the same `ASC0xx` detections in JavaScript so anyone can try the scanner
+without installing Python. The Python CLI remains the source of truth; the
+playground is a demo.
 
 ## Disclaimer
 
