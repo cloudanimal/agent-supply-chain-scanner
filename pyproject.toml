@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-supply-chain-scanner"
+version = "0.1.0"
+description = "SAST for AI agent instructions: detect prompt injection and malicious instructions in skills, MCP servers, hooks, memory, and prompts."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Joe Cook" }]
+keywords = ["security", "prompt-injection", "ai-agents", "mcp", "supply-chain", "sast", "claude"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Topic :: Security",
+  "Programming Language :: Python :: 3",
+]
+dependencies = []  # zero runtime dependencies, by design
+
+[project.scripts]
+agentscan = "agentscan.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/cloudanimal/agent-supply-chain-scanner"
+
+[tool.setuptools.packages.find]
+include = ["agentscan*"]
